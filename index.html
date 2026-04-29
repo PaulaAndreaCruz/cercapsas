@@ -19,18 +19,18 @@
       --red: #c62828;
       --accent: #00acc1;
     }
-
+ 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
     html { scroll-behavior: smooth; }
-
+ 
     body {
       font-family: 'Montserrat', sans-serif;
       background: var(--white);
       color: var(--navy);
       overflow-x: hidden;
     }
-
+ 
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
@@ -67,7 +67,7 @@
     .nav-portal:hover { background: #fdd835; transform: translateY(-1px); }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
     .hamburger span { width: 26px; height: 2px; background: #fff; border-radius: 2px; transition: .3s; }
-
+ 
     /* ── HERO ── */
     #hero {
       min-height: 100vh;
@@ -129,7 +129,7 @@
       font-weight: 600; font-size: .95rem; transition: .2s;
     }
     .btn-outline:hover { border-color: var(--sky); color: var(--sky); }
-
+ 
     /* ── SECTIONS COMMON ── */
     section { padding: 80px 6%; }
     .section-tag {
@@ -149,7 +149,7 @@
       width: 60px; height: 4px; background: var(--accent);
       border-radius: 2px; margin: 18px 0 36px;
     }
-
+ 
     /* ── ABOUT (MISION/VISION) ── */
     #nosotros { background: var(--light); }
     .mv-grid {
@@ -174,7 +174,7 @@
       background: var(--ice); display: flex; align-items: center;
       justify-content: center; font-size: 1.6rem; margin-bottom: 18px;
     }
-
+ 
     /* ── QUALITY POLICY ── */
     #calidad {
       background: var(--navy);
@@ -196,7 +196,7 @@
       border-radius: 40px; padding: 10px 24px; margin-top: 28px;
     }
     .slogan-badge span { color: var(--sky); font-weight: 700; font-size: 1rem; letter-spacing: 2px; }
-
+ 
     /* ── SERVICES ── */
     #servicios { background: var(--white); }
     .services-intro { max-width: 700px; }
@@ -219,7 +219,7 @@
     .svc-icon { font-size: 2rem; }
     .svc-card h3 { font-size: .95rem; font-weight: 800; color: var(--navy); transition: color .25s; }
     .svc-card p { font-size: .83rem; color: var(--gray); line-height: 1.6; transition: color .25s; }
-
+ 
     /* ── PATIENT RIGHTS ── */
     #derechos { background: var(--ice); }
     .rights-grid {
@@ -240,7 +240,7 @@
       content: '✦'; color: var(--accent); font-size: .7rem;
       margin-top: 4px; flex-shrink: 0;
     }
-
+ 
     /* ── POLICIES ── */
     #politicas { background: var(--white); }
     .policies-grid {
@@ -262,7 +262,7 @@
     .policy-card-header h3 { color: var(--white); font-size: .9rem; font-weight: 800; letter-spacing: .5px; }
     .policy-card-body { padding: 20px 22px; background: var(--light); }
     .policy-card-body p { font-size: .85rem; color: var(--gray); line-height: 1.7; }
-
+ 
     /* ── TEAM ── */
     #equipo { background: var(--navy); }
     #equipo .section-tag { color: var(--sky); }
@@ -286,7 +286,7 @@
     }
     .team-card h4 { color: var(--white); font-size: .85rem; font-weight: 700; margin-bottom: 4px; }
     .team-card span { color: var(--sky); font-size: .78rem; font-weight: 500; }
-
+ 
     /* ── PATIENT SAFETY ── */
     #seguridad { background: var(--light); }
     .safety-grid {
@@ -319,7 +319,7 @@
       padding: 6px 14px; font-size: .8rem; font-weight: 700;
       margin-top: 16px; letter-spacing: 1px;
     }
-
+ 
     /* ── HANDWASHING ── */
     #higiene { background: var(--white); }
     .steps-grid {
@@ -341,7 +341,7 @@
       margin: 0 auto 10px;
     }
     .step-card p { font-size: .8rem; color: var(--gray); line-height: 1.5; }
-
+ 
     /* ── CONTACT ── */
     #contacto {
       background: linear-gradient(135deg, var(--navy), #163b6e);
@@ -371,7 +371,7 @@
       font-weight: 700; font-size: .9rem; transition: .2s;
     }
     .map-link:hover { background: var(--sky); transform: translateY(-2px); }
-
+ 
     /* ── FOOTER ── */
     footer {
       background: #07111f; padding: 28px 6%;
@@ -379,9 +379,109 @@
       font-size: .8rem; letter-spacing: .3px;
     }
     footer strong { color: rgba(255,255,255,.6); }
-
-    /* ── MOBILE ── */
+ 
+    /* ── NEW SERVICES ── */
+    .svc-tabs {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin: 44px 0 32px;
+    }
+    .svc-tab {
+      padding: 12px 24px; border-radius: 30px; border: 2px solid var(--blue);
+      background: transparent; color: var(--blue); font-family: 'Montserrat',sans-serif;
+      font-weight: 700; font-size: .85rem; cursor: pointer;
+      transition: all .25s; letter-spacing: .3px;
+    }
+    .svc-tab:hover { background: var(--ice); }
+    .svc-tab.active { background: var(--blue); color: #fff; box-shadow: 0 4px 16px rgba(21,101,192,.3); }
+    .svc-panel { display: none; animation: fadeUp .4s ease; }
+    .svc-panel.active { display: block; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .svc-cards-animated {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .svc-acard {
+      background: var(--white); border-radius: 18px;
+      padding: 26px 22px; display: flex; gap: 16px;
+      border: 1px solid rgba(21,101,192,.1);
+      box-shadow: 0 3px 16px rgba(13,31,60,.06);
+      position: relative; overflow: hidden;
+      animation: cardPop .4s ease calc(var(--i) * .07s) both;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .svc-acard:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(21,101,192,.15); }
+    .svc-acard::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: linear-gradient(to bottom, var(--accent), var(--blue));
+      border-radius: 4px 0 0 4px;
+    }
+    @keyframes cardPop {
+      from { opacity: 0; transform: translateY(24px) scale(.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .svc-acard-icon { font-size: 2rem; flex-shrink: 0; margin-top: 2px; }
+    .svc-acard-body h3 { font-size: .95rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .svc-acard-body p  { font-size: .82rem; color: var(--gray); line-height: 1.6; }
+    .svc-acard-tag {
+      position: absolute; top: 14px; right: 14px;
+      background: var(--accent); color: #fff;
+      font-size: .65rem; font-weight: 800; letter-spacing: .5px;
+      padding: 3px 10px; border-radius: 10px; text-transform: uppercase;
+    }
+    /* Exams layout */
+    .svc-exams-layout {
+      display: grid; grid-template-columns: 1fr 340px; gap: 28px;
+    }
+    .exam-col-header {
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      color: #fff; font-weight: 800; font-size: .9rem;
+      padding: 14px 20px; border-radius: 12px 12px 0 0;
+      letter-spacing: .5px;
+    }
+    .exam-list { background: var(--white); border-radius: 0 0 12px 12px; border: 1px solid rgba(21,101,192,.1); overflow: hidden; }
+    .exam-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 14px 18px; border-bottom: 1px solid rgba(21,101,192,.06);
+      animation: cardPop .4s ease calc(var(--i) * .08s) both;
+      transition: background .2s;
+    }
+    .exam-item:last-child { border-bottom: none; }
+    .exam-item:hover { background: var(--ice); }
+    .exam-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0; margin-top: 5px;
+    }
+    .exam-item strong { display: block; font-size: .88rem; color: var(--navy); margin-bottom: 2px; }
+    .exam-item p { font-size: .78rem; color: var(--gray); line-height: 1.5; margin: 0; }
+    /* Contact highlight */
+    .contact-highlight {
+      background: var(--white); border-radius: 0 0 12px 12px;
+      border: 1px solid rgba(21,101,192,.1); padding: 16px;
+    }
+    .ch-item {
+      display: flex; gap: 12px; align-items: center;
+      padding: 12px 10px; border-bottom: 1px solid rgba(21,101,192,.06);
+    }
+    .ch-item:last-of-type { border-bottom: none; }
+    .ch-item span { font-size: 1.4rem; }
+    .ch-item strong { display: block; font-size: .82rem; color: var(--navy); }
+    .ch-item p { font-size: .8rem; color: var(--gray); margin: 0; }
+    .wa-btn {
+      display: block; text-align: center; margin-top: 16px;
+      background: #25d366; color: #fff;
+      padding: 13px; border-radius: 10px; text-decoration: none;
+      font-weight: 800; font-size: .88rem;
+      transition: transform .2s, background .2s;
+    }
+    .wa-btn:hover { background: #1da851; transform: translateY(-2px); }
     @media (max-width: 768px) {
+      .svc-exams-layout { grid-template-columns: 1fr; }
+    }
       .nav-links { display: none; }
       .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--navy); padding: 20px 5%; gap: 18px; }
       .hamburger { display: flex; }
@@ -389,7 +489,7 @@
       #hero { padding-top: 120px; }
       .nav-portal { display: none; }
     }
-
+ 
     /* ── PORTAL SECTION ── */
     #portal {
       background: linear-gradient(135deg, #0a1628 0%, #1565c0 100%);
@@ -416,7 +516,7 @@
   </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
   <a href="#hero" class="nav-logo">
@@ -437,13 +537,13 @@
     <span></span><span></span><span></span>
   </div>
 </nav>
-
+ 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
     <img src="logo.jpg" alt="CERCAP SAS" class="hero-logo" />
     <p class="hero-tagline">Clinicentro de Rehabilitación Cardiaca y Pulmonar</p>
-    <h1 class="hero-title">Cuidamos tu corazón<br/>y tus <span>pulmones</span></h1>
+    <h1 class="hero-title"><span>Mejorando</span> tu<br/>calidad de vida</h1>
     <p class="hero-sub">Servicios de salud integral con experiencia, calidez humana y tecnología de vanguardia en Villavicencio, Meta.</p>
     <div class="hero-btns">
       <a href="#servicios" class="btn-primary">Nuestros Servicios</a>
@@ -451,7 +551,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- PORTAL PACIENTE -->
 <section id="portal">
   <div class="portal-box">
@@ -464,7 +564,7 @@
     <p class="portal-note">Se abrirá en una nueva pestaña. Necesitas tus datos de acceso para ingresar.</p>
   </div>
 </section>
-
+ 
 <!-- NOSOTROS -->
 <section id="nosotros">
   <span class="section-tag">Quiénes somos</span>
@@ -488,7 +588,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- CALIDAD SLOGAN -->
 <section id="calidad">
   <span class="section-tag">Compromiso</span>
@@ -500,7 +600,7 @@
     <span>"PROMOVIENDO LA EXCELENCIA"</span>
   </div>
 </section>
-
+ 
 <!-- SERVICIOS -->
 <section id="servicios">
   <div class="services-intro">
@@ -509,101 +609,175 @@
     <div class="divider"></div>
     <p class="section-lead">Ofrecemos atención integral e interdisciplinaria diseñada para mejorar la calidad de vida de nuestros pacientes.</p>
   </div>
-  <div class="services-grid">
-
-    <div class="svc-card">
-      <div class="svc-icon">❤️</div>
-      <h3>Rehabilitación Cardiopulmonar</h3>
-      <p>Programa multidisciplinario individualizado para retornar al paciente a su más alta capacidad funcional posible, con valoración, ejercicios cardiovasculares y respiratorios.</p>
+ 
+  <!-- TABS -->
+  <div class="svc-tabs">
+    <button class="svc-tab active" onclick="switchTab('profesionales', this)">👨‍⚕️ Profesionales a su Servicio</button>
+    <button class="svc-tab" onclick="switchTab('examenes', this)">🔬 Nuestros Exámenes</button>
+    <button class="svc-tab" onclick="switchTab('psicologia', this)">🧠 Psicología & Cognitivo</button>
+  </div>
+ 
+  <!-- PANEL: PROFESIONALES -->
+  <div class="svc-panel active" id="panel-profesionales">
+    <div class="svc-cards-animated">
+      <div class="svc-acard" style="--i:0">
+        <div class="svc-acard-icon">❤️</div>
+        <div class="svc-acard-body">
+          <h3>Rehabilitación Cardiopulmonar</h3>
+          <p>Programa multidisciplinario individualizado con ejercicios cardiovasculares, respiratorios y reacondicionamiento físico.</p>
+        </div>
+        <div class="svc-acard-tag">Especialidad estrella</div>
+      </div>
+      <div class="svc-acard" style="--i:1">
+        <div class="svc-acard-icon">🦵</div>
+        <div class="svc-acard-body">
+          <h3>Terapia Física</h3>
+          <p>Crioterapia, termoterapia, electroestimulación, hidroterapia y técnicas de reacondicionamiento Kabbat, Bobbat y Rootd.</p>
+        </div>
+      </div>
+      <div class="svc-acard" style="--i:2">
+        <div class="svc-acard-icon">🫁</div>
+        <div class="svc-acard-body">
+          <h3>Terapia Respiratoria</h3>
+          <p>Micro nebulización, aerosoles terapéuticos, higiene bronquial, ejercicios de expansión pulmonar y educación en inhaladores.</p>
+        </div>
+      </div>
+      <div class="svc-acard" style="--i:3">
+        <div class="svc-acard-icon">🧑‍🦽</div>
+        <div class="svc-acard-body">
+          <h3>Terapia Ocupacional</h3>
+          <p>Restaura habilidades sensorio-motrices, cognitivas y psicosociales para la vida diaria e independencia funcional.</p>
+        </div>
+      </div>
+      <div class="svc-acard" style="--i:4">
+        <div class="svc-acard-icon">🗣️</div>
+        <div class="svc-acard-body">
+          <h3>Fonoaudiología</h3>
+          <p>Rehabilitación de la comunicación: atención, memoria, habilidades sociales, expresión escrita y comprensión auditiva.</p>
+        </div>
+      </div>
+      <div class="svc-acard" style="--i:5">
+        <div class="svc-acard-icon">🥗</div>
+        <div class="svc-acard-body">
+          <h3>Consulta de Nutrición</h3>
+          <p>Orientación nutricional para obtener energía, construir estructuras orgánicas y regular los procesos metabólicos.</p>
+        </div>
+      </div>
+      <div class="svc-acard" style="--i:6">
+        <div class="svc-acard-icon">🌀</div>
+        <div class="svc-acard-body">
+          <h3>Rehabilitación Vestibular</h3>
+          <p>Con realidad virtual para vértigo, Ménière, Parkinson, esclerosis múltiple y patologías del equilibrio.</p>
+        </div>
+      </div>
+      <div class="svc-acard" style="--i:7">
+        <div class="svc-acard-icon">⚖️</div>
+        <div class="svc-acard-body">
+          <h3>Programa PIPO</h3>
+          <p>Programa interdisciplinario para la obesidad: nutrición, acondicionamiento físico y apoyo psicológico.</p>
+        </div>
+      </div>
+      <div class="svc-acard" style="--i:8">
+        <div class="svc-acard-icon">🧬</div>
+        <div class="svc-acard-body">
+          <h3>Implante Subdérmico IMPLANON</h3>
+          <p>Inserción y retiro de implante anticonceptivo hormonal para mujeres entre 18 y 40 años.</p>
+        </div>
+      </div>
     </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">🦵</div>
-      <h3>Fisioterapia</h3>
-      <p>Crioterapia, termoterapia, electroestimulación, hidroterapia, ejercicio físico y técnicas de reacondicionamiento como Kabbat, Bobbat y Rootd.</p>
+  </div>
+ 
+  <!-- PANEL: EXÁMENES -->
+  <div class="svc-panel" id="panel-examenes">
+    <div class="svc-exams-layout">
+      <div class="exam-col">
+        <div class="exam-col-header">🩺 Neumología & Función Pulmonar</div>
+        <div class="exam-list">
+          <div class="exam-item" style="--i:0"><span class="exam-dot"></span><div><strong>Consulta de Neumología</strong><p>Diagnóstico y tratamiento de enfermedades respiratorias agudas y crónicas.</p></div></div>
+          <div class="exam-item" style="--i:1"><span class="exam-dot"></span><div><strong>Espirometría</strong><p>Curva flujo-volumen pre y post broncodilatador desde los 6 años.</p></div></div>
+          <div class="exam-item" style="--i:2"><span class="exam-dot"></span><div><strong>Volúmenes Pulmonares</strong><p>Evaluación completa de la capacidad pulmonar desde los 3 años.</p></div></div>
+          <div class="exam-item" style="--i:3"><span class="exam-dot"></span><div><strong>Capacidad de Difusión con CO</strong><p>Mide el intercambio gaseoso. Duración: 30–45 min. Desde los 8 años.</p></div></div>
+          <div class="exam-item" style="--i:4"><span class="exam-dot"></span><div><strong>Test Broncomotricidad con Ejercicio</strong><p>Evalúa irritabilidad de la vía aérea ante esfuerzo físico. Duración: 60 min.</p></div></div>
+          <div class="exam-item" style="--i:5"><span class="exam-dot"></span><div><strong>Oximetría Cutánea</strong><p>Saturación de oxígeno y frecuencia cardiaca. Cualquier edad.</p></div></div>
+          <div class="exam-item" style="--i:6"><span class="exam-dot"></span><div><strong>Caminata de 6 Minutos</strong><p>Evalúa tolerancia y oxigenación durante el ejercicio.</p></div></div>
+        </div>
+      </div>
+      <div class="exam-col">
+        <div class="exam-col-header" style="background: linear-gradient(135deg,#00838f,#006064)">📞 Líneas de Atención</div>
+        <div class="contact-highlight">
+          <div class="ch-item"><span>📱</span><div><strong>WhatsApp</strong><p>313 881 0803</p></div></div>
+          <div class="ch-item"><span>📱</span><div><strong>WhatsApp</strong><p>321 468 4000</p></div></div>
+          <div class="ch-item"><span>📱</span><div><strong>Celular</strong><p>315 648 6331</p></div></div>
+          <div class="ch-item"><span>✉️</span><div><strong>Correo</strong><p>Recepción.cercap@outlook.com</p></div></div>
+          <a href="https://wa.me/573138810803" target="_blank" class="wa-btn">💬 Escríbenos por WhatsApp</a>
+        </div>
+      </div>
     </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">🫁</div>
-      <h3>Terapia Respiratoria</h3>
-      <p>Micro nebulización, aerosoles terapéuticos, higiene bronquial, ejercicios de expansión pulmonar y educación en el uso de inhaladores.</p>
+  </div>
+ 
+  <!-- PANEL: PSICOLOGÍA -->
+  <div class="svc-panel" id="panel-psicologia">
+    <div class="svc-cards-animated">
+      <div class="svc-acard" style="--i:0">
+        <div class="svc-acard-icon">🧘</div>
+        <div class="svc-acard-body">
+          <h3>Psicología Individual</h3>
+          <p>Espacio de apoyo y acompañamiento para superar dificultades, estados depresivos y situaciones de malestar psicológico.</p>
+        </div>
+      </div>
+      <div class="svc-acard" style="--i:1">
+        <div class="svc-acard-icon">👨‍👩‍👧</div>
+        <div class="svc-acard-body">
+          <h3>Psicología Familiar y Grupal</h3>
+          <p>Intervención sistémica para mejorar dinámicas familiares y grupales con enfoque en conducta y procesos mentales.</p>
+        </div>
+      </div>
+      <div class="svc-acard" style="--i:2">
+        <div class="svc-acard-icon">🧩</div>
+        <div class="svc-acard-body">
+          <h3>Psicoterapia</h3>
+          <p>Acompañamiento terapéutico continuo para el bienestar mental y emocional del paciente.</p>
+        </div>
+      </div>
+      <div class="svc-acard" style="--i:3">
+        <div class="svc-acard-icon">🔄</div>
+        <div class="svc-acard-body">
+          <h3>Rehabilitación Cognitiva</h3>
+          <p>Terapia para restaurar funciones cognitivas: atención, memoria, razonamiento y solución de problemas.</p>
+        </div>
+      </div>
+      <div class="svc-acard" style="--i:4">
+        <div class="svc-acard-icon">📋</div>
+        <div class="svc-acard-body">
+          <h3>Prueba Cognitiva</h3>
+          <p>Evaluación de procesos cognitivos para diagnóstico y seguimiento clínico.</p>
+        </div>
+      </div>
+      <div class="svc-acard" style="--i:5">
+        <div class="svc-acard-icon">🏆</div>
+        <div class="svc-acard-body">
+          <h3>Pruebas de Inteligencia</h3>
+          <p>WISC (niños), WAIS (adultos), WPPSI (preescolar). Escalas Wechsler completas.</p>
+        </div>
+      </div>
+      <div class="svc-acard" style="--i:6">
+        <div class="svc-acard-icon">🧬</div>
+        <div class="svc-acard-body">
+          <h3>Pruebas Neuropsicológicas</h3>
+          <p>Evaluación integral del funcionamiento neuropsicológico para diagnóstico clínico.</p>
+        </div>
+      </div>
+      <div class="svc-acard" style="--i:7">
+        <div class="svc-acard-icon">🎭</div>
+        <div class="svc-acard-body">
+          <h3>Pruebas de Personalidad</h3>
+          <p>16PF-5, Test de Rorschach, Wartegg, MMPI-2 y otras pruebas proyectivas y objetivas.</p>
+        </div>
+      </div>
     </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">🧠</div>
-      <h3>Terapia Ocupacional</h3>
-      <p>Intervención para promover, restaurar y mantener habilidades sensorio-motrices, cognitivas y psicosociales para el desempeño ocupacional.</p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">🗣️</div>
-      <h3>Fonoaudiología</h3>
-      <p>Rehabilitación de alteraciones comunicativas: atención, memoria, razonamiento numérico, habilidades sociales, expresión escrita y comprensión auditiva.</p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">🧘</div>
-      <h3>Psicología</h3>
-      <p>Atención individual, familiar y grupal. Acompañamiento para superar dificultades psicológicas con enfoque en la conducta y los procesos mentales.</p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">🥗</div>
-      <h3>Nutrición</h3>
-      <p>Orientación sobre procesos nutricionales para obtener energía, construir estructuras orgánicas y regular los procesos metabólicos del organismo.</p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">⚖️</div>
-      <h3>Programa PIPO</h3>
-      <p>Programa interdisciplinario para la obesidad: cambio de hábitos alimentarios, acondicionamiento físico y apoyo psicológico para mejorar la calidad de vida.</p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">🏃</div>
-      <h3>Caminata de 6 Minutos</h3>
-      <p>Prueba de campo para medir tolerancia, oxigenación durante el ejercicio y prescribir terapia personalizada según la patología del paciente.</p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">🫀</div>
-      <h3>Oximetría Cutánea</h3>
-      <p>Medición de la saturación de oxígeno y frecuencia cardiaca. Se realiza a pacientes de cualquier edad sin restricción.</p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">🌀</div>
-      <h3>Rehabilitación Vestibular</h3>
-      <p>Con realidad virtual para tratar vértigo, neuritis vestibular, enfermedad de Ménière, Parkinson, esclerosis múltiple y otras patologías del equilibrio.</p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">🔬</div>
-      <h3>Laboratorio de Función Pulmonar</h3>
-      <p>Espirometría, volúmenes pulmonares, capacidad de difusión con CO, curva flujo-volumen y prueba de broncomotricidad con ejercicio.</p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">🧬</div>
-      <h3>Implante Subdérmico IMPLANON</h3>
-      <p>Implante anticonceptivo hormonal para mujeres entre 18 y 40 años. Inserción y retiro por profesional habilitado.</p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">🩺</div>
-      <h3>Neumología</h3>
-      <p>Consulta especializada en enfermedades respiratorias agudas y crónicas para todos los grupos de edad.</p>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-icon">📊</div>
-      <h3>Pruebas Neuropsicológicas</h3>
-      <p>Evaluaciones cognitivas y de personalidad: WISC, WAIS, WPPSI, 16PF-5, Rorschach, Wartegg, MMPI-2 y terapia de rehabilitación cognitiva.</p>
-    </div>
-
   </div>
 </section>
-
+ 
 <!-- DERECHOS Y DEBERES -->
 <section id="derechos">
   <span class="section-tag">Pacientes</span>
@@ -637,7 +811,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- POLÍTICAS -->
 <section id="politicas">
   <span class="section-tag">Institucional</span>
@@ -682,7 +856,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- SEGURIDAD DEL PACIENTE -->
 <section id="seguridad">
   <span class="section-tag">Seguridad</span>
@@ -707,7 +881,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- HIGIENE DE MANOS -->
 <section id="higiene">
   <span class="section-tag">Prevención</span>
@@ -740,14 +914,14 @@
     Duración con agua y jabón: 40–60 segundos &nbsp;|&nbsp; Con solución alcoholada: 20–30 segundos
   </p>
 </section>
-
+ 
 <!-- EQUIPO -->
 <section id="equipo">
   <span class="section-tag">Recurso Humano</span>
   <h2 class="section-title">Nuestro Equipo</h2>
   <div class="divider"></div>
   <p style="color:rgba(255,255,255,.65);font-size:.95rem;max-width:560px;line-height:1.7;">Profesionales altamente calificados comprometidos con tu salud y bienestar.</p>
-
+ 
   <h3 style="color:var(--sky);font-size:.8rem;letter-spacing:3px;text-transform:uppercase;margin-top:40px;margin-bottom:16px;">Área Asistencial</h3>
   <div class="team-grid">
     <div class="team-card"><div class="team-avatar">👩‍⚕️</div><h4>Shirley B. Baquero</h4><span>Esp. Rehabilitación Cardiopulmonar – Jefe</span></div>
@@ -758,7 +932,7 @@
     <div class="team-card"><div class="team-avatar">👩‍⚕️</div><h4>Dra. Adriana Alfaro</h4><span>Terapeuta Respiratoria</span></div>
     <div class="team-card"><div class="team-avatar">👩‍⚕️</div><h4>Dr. Carol Rojas</h4><span>Nutricionista</span></div>
   </div>
-
+ 
   <h3 style="color:var(--sky);font-size:.8rem;letter-spacing:3px;text-transform:uppercase;margin-top:40px;margin-bottom:16px;">Área Administrativa</h3>
   <div class="team-grid">
     <div class="team-card"><div class="team-avatar">👩‍💼</div><h4>Shirley B. Baquero Céspedes</h4><span>Representante Legal</span></div>
@@ -771,7 +945,7 @@
     <div class="team-card"><div class="team-avatar">👩‍⚕️</div><h4>Maria Martinez</h4><span>Auxiliar de Consultorio</span></div>
   </div>
 </section>
-
+ 
 <!-- CONTACTO -->
 <section id="contacto">
   <span class="section-tag">Ubicación</span>
@@ -803,22 +977,29 @@
     📍 Ver en Google Maps
   </a>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <p><strong>CERCAP S.A.S</strong> — Clinicentro de Rehabilitación Cardiaca y Pulmonar</p>
   <p style="margin-top:6px;">Cll 33A N° 36-98, Barzal Alto, Villavicencio, Meta &nbsp;|&nbsp; © 2025 Todos los derechos reservados</p>
 </footer>
-
+ 
 <script>
   function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('open');
+  }
+ 
+  function switchTab(panel, btn) {
+    document.querySelectorAll('.svc-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.svc-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + panel).classList.add('active');
+    btn.classList.add('active');
   }
   // Close menu on link click
   document.querySelectorAll('.nav-links a').forEach(a => {
     a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
   });
-
+ 
   // Fade-in on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -828,7 +1009,7 @@
       }
     });
   }, { threshold: 0.1 });
-
+ 
   document.querySelectorAll('.mv-card, .svc-card, .policy-card, .team-card, .step-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
