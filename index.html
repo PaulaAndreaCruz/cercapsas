@@ -1,5 +1,3 @@
-Copiar
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -538,6 +536,33 @@ Copiar
     .portal-btn-arrow { font-size: 1.2rem; transition: transform .2s; }
     .portal-btn-new:hover .portal-btn-arrow { transform: translateX(4px); }
  
+    /* ── STEPS GUIDE ── */
+    .steps-guide {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px; padding: 18px 20px;
+    }
+    .steps-guide-title {
+      color: var(--sky); font-weight: 800; font-size: .82rem;
+      letter-spacing: .5px; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .steps-ol {
+      list-style: none; counter-reset: steps; display: flex;
+      flex-direction: column; gap: 8px; padding: 0; margin: 0;
+    }
+    .steps-ol li {
+      counter-increment: steps; display: flex; align-items: flex-start; gap: 10px;
+      color: rgba(255,255,255,.78); font-size: .8rem; line-height: 1.5;
+    }
+    .steps-ol li::before {
+      content: counter(steps);
+      min-width: 22px; height: 22px; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      font-weight: 900; font-size: .72rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .steps-ol li strong { color: #fff; }
+ 
     /* ── CONTACT LAYOUT ── */
     .contact-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; margin-top: 40px; align-items: start; }
     .contact-info-col { display: flex; flex-direction: column; gap: 16px; }
@@ -629,19 +654,41 @@ Copiar
           <svg viewBox="0 0 300 80" class="ecg-svg" xmlns="http://www.w3.org/2000/svg">
             <polyline class="ecg-line" points="0,40 30,40 45,40 55,10 65,70 75,20 85,40 120,40 135,40 145,15 155,65 165,25 175,40 210,40 225,40 235,12 245,68 255,22 265,40 300,40"/>
           </svg>
-          <div class="portal-cards-float">
-            <div class="pf-card pf1">
+          <div class="portal-cards-float" style="grid-template-columns:1fr;">
+            <div class="pf-card pf1" style="margin-bottom:4px;">
               <div class="pf-icon">📋</div>
-              <div><strong>Historia Clínica</strong><span>Acceso inmediato</span></div>
+              <div><strong>Historia Clínica</strong><span>Acceso inmediato al portal</span></div>
             </div>
-            <div class="pf-card pf2">
-              <div class="pf-icon">🔬</div>
-              <div><strong>Resultados</strong><span>Laboratorio & exámenes</span></div>
+            <!-- CITAS expandida -->
+            <div class="pf-card pf2" style="flex-direction:column;align-items:flex-start;gap:10px;">
+              <div style="display:flex;align-items:center;gap:8px;">
+                <!-- WhatsApp SVG logo -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="22" height="22"><circle cx="16" cy="16" r="16" fill="#25d366"/><path d="M23.5 19.6c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-1 1-1.2 1.2-.4.2-.7 0a8.8 8.8 0 0 1-2.6-1.6 9.8 9.8 0 0 1-1.8-2.2c-.2-.4 0-.6.1-.7s.3-.4.5-.5l.3-.5a.6.6 0 0 0 0-.5c-.1-.2-.7-1.7-.9-2.3s-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.5 3.5 0 0 0-1.1 2.6 6 6 0 0 0 1.3 3.2c.1.2 1.9 3 4.8 4.1a14 14 0 0 0 1.6.6 3.8 3.8 0 0 0 1.8.1c.5-.1 1.6-.7 1.9-1.3a2.3 2.3 0 0 0 .2-1.3z" fill="#fff"/></svg>
+                <strong style="color:#fff;font-size:.85rem;">Citas & Contacto</strong>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
+                <a href="https://wa.me/573138810803" target="_blank" style="color:#a5f3a5;font-size:.75rem;text-decoration:none;display:flex;align-items:center;gap:5px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="14" height="14"><circle cx="16" cy="16" r="16" fill="#25d366"/><path d="M23.5 19.6c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-1 1-1.2 1.2-.4.2-.7 0a8.8 8.8 0 0 1-2.6-1.6 9.8 9.8 0 0 1-1.8-2.2c-.2-.4 0-.6.1-.7s.3-.4.5-.5l.3-.5a.6.6 0 0 0 0-.5c-.1-.2-.7-1.7-.9-2.3s-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.5 3.5 0 0 0-1.1 2.6 6 6 0 0 0 1.3 3.2c.1.2 1.9 3 4.8 4.1a14 14 0 0 0 1.6.6 3.8 3.8 0 0 0 1.8.1c.5-.1 1.6-.7 1.9-1.3a2.3 2.3 0 0 0 .2-1.3z" fill="#fff"/></svg>
+                  313 881 0803
+                </a>
+                <a href="https://wa.me/573214684000" target="_blank" style="color:#a5f3a5;font-size:.75rem;text-decoration:none;display:flex;align-items:center;gap:5px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="14" height="14"><circle cx="16" cy="16" r="16" fill="#25d366"/><path d="M23.5 19.6c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-1 1-1.2 1.2-.4.2-.7 0a8.8 8.8 0 0 1-2.6-1.6 9.8 9.8 0 0 1-1.8-2.2c-.2-.4 0-.6.1-.7s.3-.4.5-.5l.3-.5a.6.6 0 0 0 0-.5c-.1-.2-.7-1.7-.9-2.3s-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.5 3.5 0 0 0-1.1 2.6 6 6 0 0 0 1.3 3.2c.1.2 1.9 3 4.8 4.1a14 14 0 0 0 1.6.6 3.8 3.8 0 0 0 1.8.1c.5-.1 1.6-.7 1.9-1.3a2.3 2.3 0 0 0 .2-1.3z" fill="#fff"/></svg>
+                  321 468 4000
+                </a>
+                <a href="https://wa.me/573156486331" target="_blank" style="color:#a5f3a5;font-size:.75rem;text-decoration:none;display:flex;align-items:center;gap:5px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="14" height="14"><circle cx="16" cy="16" r="16" fill="#25d366"/><path d="M23.5 19.6c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-1 1-1.2 1.2-.4.2-.7 0a8.8 8.8 0 0 1-2.6-1.6 9.8 9.8 0 0 1-1.8-2.2c-.2-.4 0-.6.1-.7s.3-.4.5-.5l.3-.5a.6.6 0 0 0 0-.5c-.1-.2-.7-1.7-.9-2.3s-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.5 3.5 0 0 0-1.1 2.6 6 6 0 0 0 1.3 3.2c.1.2 1.9 3 4.8 4.1a14 14 0 0 0 1.6.6 3.8 3.8 0 0 0 1.8.1c.5-.1 1.6-.7 1.9-1.3a2.3 2.3 0 0 0 .2-1.3z" fill="#fff"/></svg>
+                  315 648 6331
+                </a>
+                <a href="mailto:Cercap.rhcp02@gmail.com" style="color:#93c5fd;font-size:.75rem;text-decoration:none;display:flex;align-items:center;gap:5px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="#93c5fd"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 5-8-5h16zm0 12H4V9.2l8 5 8-5V18z"/></svg>
+                  Cercap.rhcp02@gmail.com
+                </a>
+                <a href="mailto:Recepcion.cercap@outlook.com" style="color:#93c5fd;font-size:.75rem;text-decoration:none;display:flex;align-items:center;gap:5px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="#93c5fd"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 5-8-5h16zm0 12H4V9.2l8 5 8-5V18z"/></svg>
+                  Recepcion.cercap@outlook.com
+                </a>
+              </div>
             </div>
-            <a href="https://wa.me/573214684000" target="_blank" class="pf-card pf3" style="text-decoration:none;">
-              <div class="pf-icon">📅</div>
-              <div><strong>Citas</strong><span>Agenda por WhatsApp</span></div>
-            </a>
           </div>
         </div>
       </div>
@@ -649,19 +696,35 @@ Copiar
     <!-- Right: CTA side -->
     <div class="portal-cta-side">
       <span class="section-tag" style="color:var(--sky)">Servicios Digitales</span>
-      <h2 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;margin:12px 0 16px;line-height:1.2;">Portal del <span style="color:var(--sky)">Paciente</span> Digital</h2>
-      <p style="color:rgba(255,255,255,.72);font-size:.95rem;line-height:1.75;margin-bottom:30px;">Accede a tu historia clínica, resultados de exámenes y documentos médicos de forma segura, rápida y desde cualquier lugar.</p>
-      <div class="portal-features">
+      <h2 style="color:#fff;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;margin:12px 0 16px;line-height:1.2;">Portal del <span style="color:var(--sky)">Paciente</span> Digital</h2>
+      <p style="color:rgba(255,255,255,.72);font-size:.88rem;line-height:1.7;margin-bottom:20px;">Accede a tu historia clínica de forma segura, rápida y desde cualquier lugar.</p>
+      <div class="portal-features" style="margin-bottom:20px;">
         <div class="pf-feature"><span>✅</span> Historia clínica en línea</div>
         <div class="pf-feature"><span>✅</span> Disponible 24/7</div>
         <div class="pf-feature"><span>✅</span> Datos cifrados y seguros</div>
       </div>
-      <a href="https://novaesalud.com/CERCAP/mod_pacienteLogin/" target="_blank" class="portal-btn-new">
+ 
+      <!-- PASO A PASO -->
+      <div class="steps-guide">
+        <div class="steps-guide-title">📋 Paso a paso para consultar y descargar tu Historia Clínica</div>
+        <ol class="steps-ol">
+          <li>Entre al enlace del portal.</li>
+          <li>Escriba el número de documento del paciente en <strong>Usuario</strong>.</li>
+          <li>Escriba el mismo número de documento en <strong>Contraseña</strong>.</li>
+          <li>Ingrese al portal.</li>
+          <li>Ingrese al ítem <strong>"Descargar Historia Clínica"</strong>.</li>
+          <li>Seleccione la historia clínica por fecha y especialidad.</li>
+          <li>Descargue el archivo.</li>
+          <li>Guárdelo o imprímalo.</li>
+        </ol>
+      </div>
+ 
+      <a href="https://novaesalud.com/CERCAP/mod_pacienteLogin/" target="_blank" class="portal-btn-new" style="margin-top:20px;">
         <span class="portal-btn-icon">🗂️</span>
         <span>Ingresar al Portal</span>
         <span class="portal-btn-arrow">→</span>
       </a>
-      <p style="color:rgba(255,255,255,.35);font-size:.75rem;margin-top:14px;">Se abrirá en una nueva pestaña · Necesitas tus credenciales de acceso</p>
+      <p style="color:rgba(255,255,255,.35);font-size:.75rem;margin-top:14px;">Se abrirá en una nueva pestaña · Necesitas tu número de documento</p>
     </div>
   </div>
 </section>
