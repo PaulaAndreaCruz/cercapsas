@@ -1370,32 +1370,9 @@
   <span class="section-tag">Prevención</span>
   <h2 class="section-title">Protocolo de Higiene de Manos</h2>
   <div class="divider"></div>
-  <p class="section-lead">Siguiendo las directrices de la OMS, nuestro personal aplica rigurosamente el protocolo de lavado de manos para prevenir infecciones asociadas a la atención en salud.</p>
-  <div class="steps-grid">
-    <div class="step-card">
-      <div class="step-num">1</div>
-      <p>Antes del contacto directo con el paciente.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-num">2</div>
-      <p>Antes de una tarea antiséptica o manipular dispositivo invasivo.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-num">3</div>
-      <p>Después del contacto con fluidos o secreciones corporales.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-num">4</div>
-      <p>Después del contacto directo con el paciente.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-num">5</div>
-      <p>Después del contacto con objetos en el entorno del paciente.</p>
-    </div>
+  <div style="max-width:700px; margin:32px auto 0; border-radius:20px; overflow:hidden; box-shadow:0 6px 32px rgba(13,31,60,.1); border:1px solid rgba(21,101,192,.1);">
+    <img src="https://drive.google.com/thumbnail?id=1zc-SBTXV3szk4C8TdVgRAg0JrOcG2MtD&sz=w1200" alt="Protocolo de Higiene de Manos CERCAP" style="width:100%;height:auto;display:block;"/>
   </div>
-  <p style="margin-top:28px;font-size:.85rem;color:var(--gray);font-style:italic;text-align:center;">
-    Duración con agua y jabón: 40–60 segundos &nbsp;|&nbsp; Con solución alcoholada: 20–30 segundos
-  </p>
 </section>
 
 <!-- EQUIPO -->
@@ -1716,6 +1693,15 @@
             <a href="#servicios" class="nota-link">Ver servicios →</a>
           </div>
         </div>
+        <div class="carousel-slide">
+          <img src="https://drive.google.com/thumbnail?id=1U0y3aAVKijbo8sAISbcbc8wUIo6vm-lb&sz=w600" alt="Nota informativa CERCAP"/>
+          <div class="carousel-caption">
+            <span class="nota-badge" style="background:#00695c;">Informativo</span>
+            <h3>Información para nuestros pacientes</h3>
+            <p>Mantente al día con las últimas novedades, actividades y comunicaciones de CERCAP S.A.S para el bienestar de nuestros pacientes.</p>
+            <a href="#contacto" class="nota-link">Contáctenos →</a>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Controles -->
@@ -1728,6 +1714,7 @@
       <span class="dot" onclick="goToSlide(2)"></span>
       <span class="dot" onclick="goToSlide(3)"></span>
       <span class="dot" onclick="goToSlide(4)"></span>
+      <span class="dot" onclick="goToSlide(5)"></span>
     </div>
   </div>
 
@@ -2066,7 +2053,7 @@
 
   // ── CARRUSEL ──
   let currentSlide = 0;
-  const totalSlides = 5;
+  const totalSlides = 6;
   let autoplayTimer;
 
   function updateCarousel() {
