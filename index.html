@@ -717,6 +717,24 @@
     }
     .asoc-card:hover .asoc-dl { background: var(--accent); }
 
+    /* ── CANALES DE ATENCIÓN ── */
+    .canal-panel { display: none; animation: fadeUp .4s ease; }
+    .canal-panel.active { display: block; }
+    .canales-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .canal-img-card {
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(13,31,60,.1);
+      border: 1px solid rgba(21,101,192,.1);
+      transition: transform .25s, box-shadow .25s;
+      background: var(--white);
+    }
+    .canal-img-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(13,31,60,.15); }
+    .canal-img-card img { width: 100%; height: auto; display: block; }
+
     /* ── PQRS ── */
     .pqrs-tipos {
       display: flex; flex-wrap: wrap; gap: 14px; margin: 36px 0 24px;
@@ -870,7 +888,7 @@
     <li><a href="#nosotros">Nosotros</a></li>
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#notas">Notas</a></li>
-    <li><a href="#asociacion">Asociación</a></li>
+    <li><a href="#asociacion">Asociación de Usuarios</a></li>
     <li><a href="#equipo">Equipo</a></li>
     <li><a href="#pqrs">PQRS</a></li>
     <li><a href="#contacto">Contacto</a></li>
@@ -1005,9 +1023,50 @@
       <p>Lograr la satisfacción y fidelidad de nuestros usuarios entregando servicios de calidad y confiabilidad. Comprometidos con la atención al usuario y la mejora continua, utilizando los recursos disponibles de forma racional y proporcionando condiciones adecuadas de atención y recuperación.</p>
     </div>
   </div>
-</section>
 
-<!-- CALIDAD SLOGAN -->
+  <!-- CANALES DE ATENCIÓN -->
+  <div style="margin-top:52px;">
+    <span class="section-tag">Canales de Atención</span>
+    <h3 style="font-size:1.3rem;font-weight:900;color:var(--navy);margin:10px 0 6px;">Nuestras Sedes</h3>
+    <div class="divider"></div>
+
+    <!-- Tabs sedes canales -->
+    <div class="svc-tabs canales-tabs" style="margin:24px 0 28px;">
+      <button class="svc-tab active" onclick="switchCanales('canal-vlv', this)">📍 Villavicencio</button>
+      <button class="svc-tab" onclick="switchCanales('canal-aca', this)">📍 Acacias</button>
+    </div>
+
+    <!-- Villavicencio -->
+    <div class="canal-panel active" id="canal-vlv">
+      <div class="canales-grid">
+        <div class="canal-img-card">
+          <img src="https://drive.google.com/thumbnail?id=1OscJjXW82qJ63UQ4IC9q1w4NndgOrJVX&sz=w600" alt="Canal atención Villavicencio 1" loading="lazy"/>
+        </div>
+        <div class="canal-img-card">
+          <img src="https://drive.google.com/thumbnail?id=1Bwtyyk8ubWAoqpnLVbosnzeAXsYy0RRm&sz=w600" alt="Canal atención Villavicencio 2" loading="lazy"/>
+        </div>
+        <div class="canal-img-card">
+          <img src="https://drive.google.com/thumbnail?id=17QAQJ-xXoG4vMs5UBLOD2zNhoYyBYzXS&sz=w600" alt="Canal atención Villavicencio 3" loading="lazy"/>
+        </div>
+        <div class="canal-img-card">
+          <img src="https://drive.google.com/thumbnail?id=1BK8rCmiTUM-mrTzfIg_73Bdkf70sKmL1&sz=w600" alt="Canal atención Villavicencio 4" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- Acacias -->
+    <div class="canal-panel" id="canal-aca">
+      <div class="canales-grid">
+        <div class="canal-img-card">
+          <img src="https://drive.google.com/thumbnail?id=1OscJjXW82qJ63UQ4IC9q1w4NndgOrJVX&sz=w600" alt="Canal atención Acacias 1" loading="lazy"/>
+        </div>
+        <div class="canal-img-card">
+          <img src="https://drive.google.com/thumbnail?id=1XU1bp9rf3YjlgX79i1vexUGuBI79spOo&sz=w600" alt="Canal atención Acacias 2" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="calidad">
   <span class="section-tag">Compromiso</span>
   <h2 class="section-title">Nuestra Política de Calidad</h2>
@@ -1430,6 +1489,10 @@
             <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=13wdE04yDU1whVfht7mZ8GqstRwWoHiYp&sz=w300" alt="Ana Marcela Sánchez" loading="lazy"/></div>
             <div class="team-photo-info"><h4>Ana Marcela Sánchez</h4><span>Neuropsicóloga</span></div>
           </div>
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1eZRKjLrP-0Lpa3_MA85rOqqi7ss_keZQ&sz=w300" alt="Lucía Polanía" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Lucía Polanía</h4><span>Neuropsicóloga</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1626,6 +1689,15 @@
             <a href="#derechos" class="nota-link">Ver más →</a>
           </div>
         </div>
+        <div class="carousel-slide">
+          <img src="https://drive.google.com/thumbnail?id=1Mukglrf3M1CTJYZPCHtajS0k2V9IvPDt&sz=w600" alt="FeNO Laboratorio Pulmonar"/>
+          <div class="carousel-caption">
+            <span class="nota-badge" style="background:#6a1b9a;">Novedad</span>
+            <h3>Ampliamos nuestro Laboratorio — FeNO</h3>
+            <p>La Fracción Exhalada de Óxido Nítrico es una prueba rápida, no invasiva e indolora que mide la inflamación en bronquios y vías respiratorias. Diagnostica y controla el asma.</p>
+            <a href="#servicios" class="nota-link">Ver servicios →</a>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Controles -->
@@ -1637,6 +1709,7 @@
       <span class="dot" onclick="goToSlide(1)"></span>
       <span class="dot" onclick="goToSlide(2)"></span>
       <span class="dot" onclick="goToSlide(3)"></span>
+      <span class="dot" onclick="goToSlide(4)"></span>
     </div>
   </div>
 
@@ -1906,6 +1979,13 @@
 
 <script>
   // ── FUNCIONES GLOBALES (deben estar primero) ──
+  function switchCanales(panel, btn) {
+    document.querySelectorAll('.canal-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.canales-tabs .svc-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById(panel).classList.add('active');
+    btn.classList.add('active');
+  }
+
   function selectTipo(tipo, btn) {
     document.querySelectorAll('.pqrs-tipo').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.pqrs-desc').forEach(d => d.classList.remove('active'));
@@ -1968,7 +2048,7 @@
 
   // ── CARRUSEL ──
   let currentSlide = 0;
-  const totalSlides = 4;
+  const totalSlides = 5;
   let autoplayTimer;
 
   function updateCarousel() {
