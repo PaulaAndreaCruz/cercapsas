@@ -717,6 +717,29 @@
     }
     .asoc-card:hover .asoc-dl { background: var(--accent); }
 
+    /* ── SEDE PANELS ── */
+    .sede-panel { display: none; animation: fadeUp .4s ease; margin-top: 32px; }
+    .sede-panel.active { display: block; }
+    .equipo-bloque { margin-bottom: 44px; }
+    .equipo-bloque-title {
+      font-size: .82rem; font-weight: 900; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--sky);
+      margin-bottom: 24px; padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .equipo-especialidad { margin-bottom: 28px; }
+    .esp-header { margin-bottom: 16px; }
+    .esp-label {
+      display: inline-block; font-size: .75rem; font-weight: 800;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--navy); background: var(--sky);
+      padding: 4px 14px; border-radius: 20px; margin-bottom: 10px;
+    }
+    .esp-desc {
+      font-size: .85rem; color: rgba(255,255,255,.65);
+      line-height: 1.7; max-width: 700px;
+    }
+
     /* ── TEAM PHOTO CARDS ── */
     .team-grid-photos {
       display: grid;
@@ -1252,242 +1275,445 @@
   <div class="divider"></div>
   <p style="color:rgba(255,255,255,.65);font-size:.95rem;max-width:560px;line-height:1.7;">Profesionales altamente calificados comprometidos con tu salud y bienestar.</p>
 
-  <h3 style="color:var(--sky);font-size:.8rem;letter-spacing:3px;text-transform:uppercase;margin-top:40px;margin-bottom:20px;">Área Asistencial</h3>
-  <div class="team-grid-photos">
+  <!-- TABS SEDES -->
+  <div class="svc-tabs equipo-sede-tabs" style="margin-top:36px;">
+    <button class="svc-tab active" onclick="switchSede('villavicencio', this)">📍 Villavicencio</button>
+    <button class="svc-tab" onclick="switchSede('acacias', this)">📍 Acacias</button>
+  </div>
 
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1RGd8W2nvJS8SHY5bxWwZz38z6rYnW11Z&sz=w300" alt="Audry Rincón" loading="lazy"/>
+  <!-- ═══════════ VILLAVICENCIO ═══════════ -->
+  <div class="sede-panel active" id="sede-villavicencio">
+
+    <div class="equipo-bloque">
+      <div class="equipo-bloque-title">🏥 Área Asistencial</div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-header">
+          <div class="esp-label">Terapia Ocupacional</div>
+          <p class="esp-desc">Integra acciones sociales, de salud y de rehabilitación para que personas y comunidades sean funcionales e independientes en las actividades de la vida diaria. Promueve, restaura y mantiene habilidades sensorio-motrices, cognitivas y psicosociales.</p>
+        </div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1RGd8W2nvJS8SHY5bxWwZz38z6rYnW11Z&sz=w300" alt="Audry Rincón" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Audry Rincón</h4><span>Terapeuta Ocupacional</span></div>
+          </div>
+        </div>
       </div>
-      <div class="team-photo-info">
-        <h4>Audry Rincón</h4>
-        <span>Terapeuta Ocupacional</span>
+
+      <div class="equipo-especialidad">
+        <div class="esp-header">
+          <div class="esp-label">Fonoaudiología</div>
+          <p class="esp-desc">Rehabilita las diferentes alteraciones de la comunicación, dotando al paciente de mayor autonomía comunicativa. Trabaja áreas como atención, memoria, habilidades sociales, expresión escrita y comprensión auditiva.</p>
+        </div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1AnUav6O1pzllIbKXEGJAQV9PDx8HI7bo&sz=w300" alt="Esperanza Rincones" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Esperanza Rincones</h4><span>Fonoaudióloga</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-header">
+          <div class="esp-label">Fisioterapia</div>
+          <p class="esp-desc">Identifica y maximiza la calidad de vida y el potencial de movimiento. Evalúa y proporciona tratamiento para desarrollar, mantener y restablecer el movimiento y la función máxima mediante crioterapia, termoterapia, electroestimulación, hidroterapia y técnicas especializadas.</p>
+        </div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1SkLo5aQdAdIzmJRWtrHSn0Jmp-6DPw7P&sz=w300" alt="Antoliano Viloria" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Antoliano Viloria</h4><span>Fisioterapeuta</span></div>
+          </div>
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1iE_PlI3h0-9b148TWwGk5X6wRPoTvn_D&sz=w300" alt="Betsy de Arco" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Betsy de Arco</h4><span>Fisioterapeuta</span></div>
+          </div>
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1saBCut_6COYFDjQydUDuFMRCrk6DpByy&sz=w300" alt="Beeycker Moreno" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Beeycker Moreno</h4><span>Fisioterapeuta</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-header">
+          <div class="esp-label">Psicología</div>
+          <p class="esp-desc">Permite al paciente encontrar apoyo y acompañamiento para superar dificultades y situaciones que generan malestar psicológico. Estudia la conducta y los procesos mentales, incluyendo las influencias del entorno físico y social. Atención individual, familiar y grupal.</p>
+        </div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1p1mgaPi9beLWuiQlownGWDJTOHcIBd7e&sz=w300" alt="Diana Useche" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Diana Useche</h4><span>Psicóloga</span></div>
+          </div>
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=13hCWbQtrDy1xpCMrSIAz2eu9z01Bckog&sz=w300" alt="María Bohórquez" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>María Bohórquez</h4><span>Psicóloga</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-header">
+          <div class="esp-label">Neuropsicología</div>
+          <p class="esp-desc">Evalúa y rehabilita los procesos cognitivos mediante pruebas especializadas como escalas Wechsler, pruebas neuropsicológicas, de personalidad y de inteligencia. Diseña programas de rehabilitación cognitiva personalizados para cada paciente.</p>
+        </div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1TPgSK8SUr4vA2XsyPnp26qSzrsJzERpx&sz=w300" alt="Paola Buitrago" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Paola Buitrago</h4><span>Neuropsicóloga</span></div>
+          </div>
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=13wdE04yDU1whVfht7mZ8GqstRwWoHiYp&sz=w300" alt="Ana Marcela Sánchez" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Ana Marcela Sánchez</h4><span>Neuropsicóloga</span></div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1AnUav6O1pzllIbKXEGJAQV9PDx8HI7bo&sz=w300" alt="Esperanza Rincones" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Esperanza Rincones</h4>
-        <span>Fonoaudióloga</span>
-      </div>
-    </div>
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1ifxXZZE93PNWEyq-oWaAgptDwKcJtRiQ&sz=w300" alt="Diana Hurtado" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Diana Hurtado</h4>
-        <span>Psicóloga</span>
-      </div>
-    </div>
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1iE_PlI3h0-9b148TWwGk5X6wRPoTvn_D&sz=w300" alt="Betsy de Arco" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Betsy de Arco</h4>
-        <span>Fisioterapeuta</span>
-      </div>
-    </div>
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1SkLo5aQdAdIzmJRWtrHSn0Jmp-6DPw7P&sz=w300" alt="Antoliano Viloria" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Antoliano Viloria</h4>
-        <span>Fisioterapeuta</span>
-      </div>
-    </div>
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1p1mgaPi9beLWuiQlownGWDJTOHcIBd7e&sz=w300" alt="Diana Useche" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Diana Useche</h4>
-        <span>Psicóloga</span>
-      </div>
-    </div>
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=13hCWbQtrDy1xpCMrSIAz2eu9z01Bckog&sz=w300" alt="María Bohórquez" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>María Bohórquez</h4>
-        <span>Psicóloga</span>
-      </div>
-    </div>
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1sLy08ciXftk_oCHqCvx_cx1eAiXYuq3P&sz=w300" alt="Juan Carlos Luque" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Juan Carlos Luque</h4>
-        <span>Orientador</span>
-      </div>
-    </div>
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1saBCut_6COYFDjQydUDuFMRCrk6DpByy&sz=w300" alt="Beeycker Moreno" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Beeycker Moreno</h4>
-        <span>Fisioterapeuta</span>
-      </div>
-    </div>
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=14V3QoAxk8qhr52yY-6y_RtZaAgoXTevL&sz=w300" alt="Leonardo Castro" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Leonardo Castro</h4>
-        <span>Fisioterapeuta</span>
-      </div>
-    </div>
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1QLgPkoZVttRdlwS4rn1k4URuo0qo03Tb&sz=w300" alt="Yuly Andrea García" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Yuly Andrea García</h4>
-        <span>Psicóloga</span>
-      </div>
-    </div>
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=14Nr4GS2c4WM-qDmh6cjYF2yPhxIHjFZs&sz=w300" alt="Gloria Andrea Romero" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Gloria Andrea Romero</h4>
-        <span>Psicóloga</span>
-      </div>
-    </div>
-
-    <!-- Shirley sin foto aún -->
-    <div class="team-photo-card">
-      <div class="team-photo-wrap no-photo">
-        <span>SB</span>
-      </div>
-      <div class="team-photo-info">
-        <h4>Shirley B. Baquero</h4>
-        <span>Esp. Rehabilitación Cardiopulmonar – Jefe</span>
-      </div>
-    </div>
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap no-photo">
-        <span>FM</span>
-      </div>
-      <div class="team-photo-info">
-        <h4>Dr. Felipe Morales</h4>
-        <span>Neumólogo</span>
+    <div class="equipo-bloque">
+      <div class="equipo-bloque-title">🏢 Área Administrativa</div>
+      <div class="team-grid-photos">
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1AO0Eyjmw9rHpc56KUvyaCK0kmKq1tWLe&sz=w300" alt="Sirley Baquero" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Sirley Baquero</h4><span>Gerente</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1_yeJFrSgA472491-vlJUCoKzh9RDpvzy&sz=w300" alt="Natali Aranza" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Natali Aranza</h4><span>Coordinadora Administrativa</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1GegAnTx8p7u3mi8kCz0sLgyqK73l4JCw&sz=w300" alt="Laura Daniela Cruz" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Laura Daniela Cruz Baquero</h4><span>Contadora Pública</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1nzt6i0D0EnwVMXs02KlTqObYF0J-e4s4&sz=w300" alt="Equipo de Facturación" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Equipo de Facturación</h4><span>Facturación</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1IFOXGC1TtBQNnzelPEOmF6O9SBAeDmpD&sz=w300" alt="Equipo SIAU" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Equipo SIAU</h4><span>SIAU</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1G0tervCFvBQjfAX6ZfZKDOBS5_Md8eUG&sz=w300" alt="Clara Hernández" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Clara Hernández</h4><span>Servicios Generales</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1sLy08ciXftk_oCHqCvx_cx1eAiXYuq3P&sz=w300" alt="Juan Carlos Luque" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Juan Carlos Luque</h4><span>Orientador</span></div>
+        </div>
       </div>
     </div>
 
   </div>
 
-  <h3 style="color:var(--sky);font-size:.8rem;letter-spacing:3px;text-transform:uppercase;margin-top:52px;margin-bottom:20px;">Área Administrativa & SIAU</h3>
-  <div class="team-grid-photos">
+  <!-- ═══════════ ACACIAS ═══════════ -->
+  <div class="sede-panel" id="sede-acacias">
 
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1ULB0R2-U_SaQCU0n6plzc4sZipS42P1P&sz=w300" alt="Leidy Ayala" loading="lazy"/>
+    <div class="equipo-bloque">
+      <div class="equipo-bloque-title">🏥 Área Asistencial</div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-header">
+          <div class="esp-label">Terapia Ocupacional</div>
+          <p class="esp-desc">Integra acciones sociales, de salud y de rehabilitación para que personas y comunidades sean funcionales e independientes en las actividades de la vida diaria. Promueve, restaura y mantiene habilidades sensorio-motrices, cognitivas y psicosociales.</p>
+        </div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1RGd8W2nvJS8SHY5bxWwZz38z6rYnW11Z&sz=w300" alt="Audry Rincón" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Audry Rincón</h4><span>Terapeuta Ocupacional</span></div>
+          </div>
+        </div>
       </div>
-      <div class="team-photo-info">
-        <h4>Leidy Ayala</h4>
-        <span>SIAU</span>
+
+      <div class="equipo-especialidad">
+        <div class="esp-header">
+          <div class="esp-label">Fonoaudiología</div>
+          <p class="esp-desc">Rehabilita las diferentes alteraciones de la comunicación, dotando al paciente de mayor autonomía comunicativa. Trabaja áreas como atención, memoria, habilidades sociales, expresión escrita y comprensión auditiva.</p>
+        </div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1AnUav6O1pzllIbKXEGJAQV9PDx8HI7bo&sz=w300" alt="Esperanza Rincones" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Esperanza Rincones</h4><span>Fonoaudióloga</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-header">
+          <div class="esp-label">Fisioterapia</div>
+          <p class="esp-desc">Identifica y maximiza la calidad de vida y el potencial de movimiento. Evalúa y proporciona tratamiento para desarrollar, mantener y restablecer el movimiento y la función máxima mediante crioterapia, termoterapia, electroestimulación, hidroterapia y técnicas especializadas.</p>
+        </div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=14V3QoAxk8qhr52yY-6y_RtZaAgoXTevL&sz=w300" alt="Leonardo Castro" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Leonardo Castro</h4><span>Fisioterapeuta</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-header">
+          <div class="esp-label">Psicología</div>
+          <p class="esp-desc">Permite al paciente encontrar apoyo y acompañamiento para superar dificultades y situaciones que generan malestar psicológico. Atención individual, familiar y grupal con enfoque en conducta y procesos mentales.</p>
+        </div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=14Nr4GS2c4WM-qDmh6cjYF2yPhxIHjFZs&sz=w300" alt="Gloria Andrea Romero" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Gloria Andrea Romero</h4><span>Psicóloga</span></div>
+          </div>
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1QLgPkoZVttRdlwS4rn1k4URuo0qo03Tb&sz=w300" alt="Yuly Andrea García" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Yuly Andrea García</h4><span>Psicóloga</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-header">
+          <div class="esp-label">Nutrición y Dietética</div>
+          <p class="esp-desc">Estudia los procesos mediante los cuales el ser vivo integra sustancias que recibe de la alimentación para obtener energía, construir y reparar estructuras orgánicas y regular los procesos metabólicos.</p>
+        </div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1LPhp49nnKIALpp8_dQ1kknEbozaAZHo4&sz=w300" alt="Edith Sierra" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Edith Sierra</h4><span>Nutricionista</span></div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=12iRKh58xmJqM6dpNjZ1CZcUdU0sFHWT0&sz=w300" alt="Sara Garzón" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Sara Garzón</h4>
-        <span>SIAU</span>
-      </div>
-    </div>
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1JzPN7krKkKABs3mwuKBJqtDqW2zMqk9S&sz=w300" alt="Leonardo Benavides" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Leonardo Benavides</h4>
-        <span>SIAU</span>
-      </div>
-    </div>
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1IhdKXChqBR15SKTWXyxVGFqIj5mywH2V&sz=w300" alt="Juan Pardo" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Juan Pardo</h4>
-        <span>Apoyo Administrativo</span>
-      </div>
-    </div>
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=19Huwe3qGIjUwDXevVboENJ7eJXbov_sD&sz=w300" alt="Cristian Castañeda" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Cristian Castañeda</h4>
-        <span>Apoyo Administrativo</span>
-      </div>
-    </div>
-
-  </div>
-
-  <h3 style="color:var(--sky);font-size:.8rem;letter-spacing:3px;text-transform:uppercase;margin-top:52px;margin-bottom:20px;">📍 Sede Acacias — Área Administrativa</h3>
-  <div class="team-grid-photos">
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1v28A934NN6IUJS7tj7ZyFwwerziA6iny&sz=w300" alt="Liliana Gutiérrez" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Liliana Gutiérrez</h4>
-        <span>SIAU</span>
-      </div>
-    </div>
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1nzt6i0D0EnwVMXs02KlTqObYF0J-e4s4&sz=w300" alt="Equipo de Facturación" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Equipo de Facturación</h4>
-        <span>Sede Acacias</span>
-      </div>
-    </div>
-
-    <div class="team-photo-card">
-      <div class="team-photo-wrap">
-        <img src="https://drive.google.com/thumbnail?id=1xfp3hr8_M4ObByKi0AuuO5i1DBTQ1XGm&sz=w300" alt="Rosa Vanegas" loading="lazy"/>
-      </div>
-      <div class="team-photo-info">
-        <h4>Rosa Vanegas</h4>
-        <span>Servicios Generales</span>
+    <div class="equipo-bloque">
+      <div class="equipo-bloque-title">🏢 Área Administrativa</div>
+      <div class="team-grid-photos">
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1AO0Eyjmw9rHpc56KUvyaCK0kmKq1tWLe&sz=w300" alt="Sirley Baquero" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Sirley Baquero</h4><span>Gerente</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1_yeJFrSgA472491-vlJUCoKzh9RDpvzy&sz=w300" alt="Natali Aranza" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Natali Aranza</h4><span>Coordinadora Administrativa</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1GegAnTx8p7u3mi8kCz0sLgyqK73l4JCw&sz=w300" alt="Laura Daniela Cruz" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Laura Daniela Cruz Baquero</h4><span>Contadora Pública</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1nzt6i0D0EnwVMXs02KlTqObYF0J-e4s4&sz=w300" alt="Equipo de Facturación" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Equipo de Facturación</h4><span>Facturación</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1v28A934NN6IUJS7tj7ZyFwwerziA6iny&sz=w300" alt="Liliana Gutiérrez" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Liliana Gutiérrez</h4><span>SIAU</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1xfp3hr8_M4ObByKi0AuuO5i1DBTQ1XGm&sz=w300" alt="Rosa Vanegas" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Rosa Vanegas</h4><span>Servicios Generales</span></div>
+        </div>
       </div>
     </div>
 
   </div>
 </section>
+
+    <div class="equipo-bloque">
+      <div class="equipo-bloque-title">🏥 Área Asistencial</div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-label">Terapia Ocupacional</div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1RGd8W2nvJS8SHY5bxWwZz38z6rYnW11Z&sz=w300" alt="Audry Rincón" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Audry Rincón</h4><span>Terapeuta Ocupacional</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-label">Fonoaudiología</div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1AnUav6O1pzllIbKXEGJAQV9PDx8HI7bo&sz=w300" alt="Esperanza Rincones" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Esperanza Rincones</h4><span>Fonoaudióloga</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-label">Fisioterapia</div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1SkLo5aQdAdIzmJRWtrHSn0Jmp-6DPw7P&sz=w300" alt="Antoliano Viloria" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Antoliano Viloria</h4><span>Fisioterapeuta</span></div>
+          </div>
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1iE_PlI3h0-9b148TWwGk5X6wRPoTvn_D&sz=w300" alt="Betsy de Arco" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Betsy de Arco</h4><span>Fisioterapeuta</span></div>
+          </div>
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1saBCut_6COYFDjQydUDuFMRCrk6DpByy&sz=w300" alt="Beeycker Moreno" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Beeycker Moreno</h4><span>Fisioterapeuta</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-label">Psicología</div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1p1mgaPi9beLWuiQlownGWDJTOHcIBd7e&sz=w300" alt="Diana Useche" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Diana Useche</h4><span>Psicóloga</span></div>
+          </div>
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=13hCWbQtrDy1xpCMrSIAz2eu9z01Bckog&sz=w300" alt="María Bohórquez" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>María Bohórquez</h4><span>Psicóloga</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-label">Neuropsicología</div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1TPgSK8SUr4vA2XsyPnp26qSzrsJzERpx&sz=w300" alt="Paola Buitrago" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Paola Buitrago</h4><span>Neuropsicóloga</span></div>
+          </div>
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=13wdE04yDU1whVfht7mZ8GqstRwWoHiYp&sz=w300" alt="Ana Marcela Sánchez" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Ana Marcela Sánchez</h4><span>Neuropsicóloga</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="equipo-bloque">
+      <div class="equipo-bloque-title">🏢 Área Administrativa</div>
+      <div class="team-grid-photos">
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1AO0Eyjmw9rHpc56KUvyaCK0kmKq1tWLe&sz=w300" alt="Sirley Baquero" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Sirley Baquero</h4><span>Gerente</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1_yeJFrSgA472491-vlJUCoKzh9RDpvzy&sz=w300" alt="Natali Aranza" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Natali Aranza</h4><span>Coordinadora Administrativa</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1GegAnTx8p7u3mi8kCz0sLgyqK73l4JCw&sz=w300" alt="Laura Daniela Cruz" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Laura Daniela Cruz Baquero</h4><span>Contadora Pública</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1nzt6i0D0EnwVMXs02KlTqObYF0J-e4s4&sz=w300" alt="Equipo de Facturación" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Equipo de Facturación</h4><span>Facturación</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1IFOXGC1TtBQNnzelPEOmF6O9SBAeDmpD&sz=w300" alt="Equipo SIAU" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Equipo SIAU</h4><span>SIAU</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1G0tervCFvBQjfAX6ZfZKDOBS5_Md8eUG&sz=w300" alt="Clara Hernández" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Clara Hernández</h4><span>Servicios Generales</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1sLy08ciXftk_oCHqCvx_cx1eAiXYuq3P&sz=w300" alt="Juan Carlos Luque" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Juan Carlos Luque</h4><span>Orientador</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════ ACACIAS ═══════════ -->
+  <div class="sede-panel" id="sede-acacias">
+
+    <div class="equipo-bloque">
+      <div class="equipo-bloque-title">🏥 Área Asistencial</div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-label">Terapia Ocupacional</div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1RGd8W2nvJS8SHY5bxWwZz38z6rYnW11Z&sz=w300" alt="Audry Rincón" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Audry Rincón</h4><span>Terapeuta Ocupacional</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-label">Fonoaudiología</div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1AnUav6O1pzllIbKXEGJAQV9PDx8HI7bo&sz=w300" alt="Esperanza Rincones" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Esperanza Rincones</h4><span>Fonoaudióloga</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-label">Fisioterapia</div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=14V3QoAxk8qhr52yY-6y_RtZaAgoXTevL&sz=w300" alt="Leonardo Castro" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Leonardo Castro</h4><span>Fisioterapeuta</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-label">Psicología</div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=14Nr4GS2c4WM-qDmh6cjYF2yPhxIHjFZs&sz=w300" alt="Gloria Andrea Romero" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Gloria Andrea Romero</h4><span>Psicóloga</span></div>
+          </div>
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1QLgPkoZVttRdlwS4rn1k4URuo0qo03Tb&sz=w300" alt="Yuly Andrea García" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Yuly Andrea García</h4><span>Psicóloga</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="equipo-especialidad">
+        <div class="esp-label">Nutrición y Dietética</div>
+        <div class="team-grid-photos">
+          <div class="team-photo-card">
+            <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1LPhp49nnKIALpp8_dQ1kknEbozaAZHo4&sz=w300" alt="Edith Sierra" loading="lazy"/></div>
+            <div class="team-photo-info"><h4>Edith Sierra</h4><span>Nutricionista</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="equipo-bloque">
+      <div class="equipo-bloque-title">🏢 Área Administrativa</div>
+      <div class="team-grid-photos">
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1AO0Eyjmw9rHpc56KUvyaCK0kmKq1tWLe&sz=w300" alt="Sirley Baquero" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Sirley Baquero</h4><span>Gerente</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1_yeJFrSgA472491-vlJUCoKzh9RDpvzy&sz=w300" alt="Natali Aranza" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Natali Aranza</h4><span>Coordinadora Administrativa</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1GegAnTx8p7u3mi8kCz0sLgyqK73l4JCw&sz=w300" alt="Laura Daniela Cruz" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Laura Daniela Cruz Baquero</h4><span>Contadora Pública</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1nzt6i0D0EnwVMXs02KlTqObYF0J-e4s4&sz=w300" alt="Equipo de Facturación" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Equipo de Facturación</h4><span>Facturación</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1v28A934NN6IUJS7tj7ZyFwwerziA6iny&sz=w300" alt="Liliana Gutiérrez" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Liliana Gutiérrez</h4><span>SIAU</span></div>
+        </div>
+        <div class="team-photo-card">
+          <div class="team-photo-wrap"><img src="https://drive.google.com/thumbnail?id=1xfp3hr8_M4ObByKi0AuuO5i1DBTQ1XGm&sz=w300" alt="Rosa Vanegas" loading="lazy"/></div>
+          <div class="team-photo-info"><h4>Rosa Vanegas</h4><span>Servicios Generales</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- NOTAS INFORMATIVAS -->
 <section id="notas" style="background:var(--light);">
@@ -1732,6 +1958,21 @@
 </footer>
 
 <script>
+  // ── FUNCIONES GLOBALES (deben estar primero) ──
+  function switchSede(sede, btn) {
+    document.querySelectorAll('.sede-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.equipo-sede-tabs .svc-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById('sede-' + sede).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function switchTab(panel, btn) {
+    document.querySelectorAll('.svc-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.svc-tab:not(.equipo-sede-tabs .svc-tab)').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + panel).classList.add('active');
+    btn.classList.add('active');
+  }
+
   function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('open');
   }
@@ -1801,12 +2042,6 @@
     document.getElementById('cf-mensaje').value = '';
   }
 
-  function switchTab(panel, btn) {
-    document.querySelectorAll('.svc-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.svc-tab').forEach(b => b.classList.remove('active'));
-    document.getElementById('panel-' + panel).classList.add('active');
-    btn.classList.add('active');
-  }
   // Close menu on link click
   document.querySelectorAll('.nav-links a').forEach(a => {
     a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
