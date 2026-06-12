@@ -689,6 +689,26 @@
     }
     .nota-link:hover { color: var(--accent); letter-spacing: .3px; }
 
+    /* ── PPSS FOLDERS ── */
+    .ppss-folder {
+      margin-bottom: 16px; border-radius: 16px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .ppss-folder-header {
+      display: flex; align-items: center; gap: 12px;
+      background: linear-gradient(135deg, #1565c0, #0d47a1);
+      padding: 14px 20px; cursor: pointer;
+      font-weight: 800; font-size: .9rem; color: #fff; letter-spacing: .5px;
+    }
+    .ppss-folder-body {
+      background: rgba(255,255,255,.04);
+      padding: 12px 12px 12px 32px;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .ppss-folder-body .asoc-card {
+      border-color: rgba(255,255,255,.08);
+    }
+
     /* ── ASOCIACIÓN DE USUARIOS ── */
     .asoc-grid {
       display: grid;
@@ -1798,6 +1818,45 @@
       <div class="asoc-dl">⬇</div>
     </a>
 
+  </div>
+
+  <!-- PPSS -->
+  <h3 style="color:var(--sky);font-size:.8rem;letter-spacing:3px;text-transform:uppercase;margin-top:44px;margin-bottom:20px;">📁 PPSS — Plan de Participación Social en Salud</h3>
+
+  <!-- Carpeta Mayo -->
+  <div class="ppss-folder">
+    <div class="ppss-folder-header">
+      <span>📂</span>
+      <span>PPSS — Mes de Mayo</span>
+    </div>
+    <div class="ppss-folder-body">
+      <a href="https://docs.google.com/presentation/d/1wbpSI-R-SZkWYVgeU1cab50eUTyQlgD7/edit?usp=drive_link" target="_blank" class="asoc-card">
+        <div class="asoc-icon">📊</div>
+        <div class="asoc-info">
+          <h4>Participación con el Personal de Salud</h4>
+          <span>Fomento del Derecho a la Salud y Participación · Mayo 2025</span>
+        </div>
+        <div class="asoc-dl">↗</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Carpeta Junio -->
+  <div class="ppss-folder">
+    <div class="ppss-folder-header">
+      <span>📂</span>
+      <span>PPSS — Mes de Junio</span>
+    </div>
+    <div class="ppss-folder-body">
+      <a href="https://docs.google.com/presentation/d/1bIhwl8UGNhod1eH4XJlVoK1Iy2q1jrPP/edit?usp=drive_link" target="_blank" class="asoc-card">
+        <div class="asoc-icon">📊</div>
+        <div class="asoc-info">
+          <h4>Jornada de Formación a los Usuarios de la IPS</h4>
+          <span>Humanización en la Prestación de Servicios de Salud · Junio 2025</span>
+        </div>
+        <div class="asoc-dl">↗</div>
+      </a>
+    </div>
   </div>
 
 
